@@ -1,0 +1,32 @@
+$containerWidth: 940px;
+$baseFontSize: 18px;
+
+//colors
+$blue: #1968B1;
+$black: #292929;
+
+//z-indexes
+$z-fixed-menu: 100;
+
+// normalize
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+
+// setups
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700;800&display=swap&subset=cyrillica');
+@import "layout.scss";
+
+//blocks
+@import "blocks/_preview.scss";
+@import "blocks/_header.scss";
+@import "blocks/_features.scss";
+@import "blocks/_btn.scss";
+@import "blocks/_section.scss";
+@import "blocks/_benefits.scss";
+@import "blocks/_benefit.scss";
+@import "blocks/_reviews.scss";
+@import "blocks/_interactive-avatar.scss";
+@import "blocks/_order.scss";
+@import "blocks/_form.scss";
+@import "blocks/_radio.scss";
+@import "blocks/_fixed-menu.scss";
+

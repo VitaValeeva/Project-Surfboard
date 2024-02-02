@@ -1,0 +1,44 @@
+.btn {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 21px 41px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+
+  &--color--yellow {
+    background: #FEDB3F;
+    color: #000;
+  
+    &:hover {
+      color: #FEDB3F;
+      background: #000;
+    }
+  }
+
+  &--color--darkyellow {
+    background: #FFD517;
+    color: #000;
+  
+    &:hover {
+      background: #000;
+      color: #FFD517;
+    }
+  }
+ 
+  &--color--transparent {
+    background: transparent;
+    color: #fff;
+    text-transform: none;
+    font-weight: 400;
+
+    &:hover {
+      color: #FFD517;
+    }
+  }
+}
+
+
+

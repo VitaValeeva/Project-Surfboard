@@ -1,0 +1,34 @@
+.preview {
+  background: url("../img/bg-preview.png") center no-repeat;
+  background-size: cover;
+  background-color: $blue;
+  height: 100vh;
+  min-height: 652px;
+  color: #fff;
+}
+
+.preview__title-section {
+  width: 46%;
+}
+
+.preview__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 28px 0 61px 0;
+}
+
+.preview__main-title {
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 17px;
+  text-transform: uppercase;
+}
+
+.preview__title-desc {
+  font-size: 21px;
+  margin-bottom: 60px;
+}
+
