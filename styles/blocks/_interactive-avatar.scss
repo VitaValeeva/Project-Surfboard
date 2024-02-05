@@ -1,7 +1,7 @@
 .interactive-avatar {
-  width: 74px;
-  height: 74px;
-  border: 6px solid transparent;
+  width: rem(74px);
+  height: rem(74px);
+  border: rem(6px) solid transparent;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -30,5 +30,6 @@
 .reviews__switcher {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: rem(19px);
+  gap: rem(6px);
 }

@@ -8,9 +8,9 @@
   position: relative;
 
   &:before {
-    content: url("../../img/decor.svg");
+    content: url("../img/decor.svg");
     position: absolute;
-    top: 57px;
+    top: rem(57px);
     right: 0;
     transform: translateX(50%);
   }

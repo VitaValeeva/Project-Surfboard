@@ -1,9 +1,15 @@
 $containerWidth: 940px;
 $baseFontSize: 18px;
 
+//breakpoints
+$tablets: 768px;
+$phones: 480px;
+
 //colors
 $blue: #1968B1;
 $black: #292929;
+
+@import "media";
 
 //z-indexes
 $z-fixed-menu: 100;
@@ -18,6 +24,7 @@ $z-fixed-menu: 100;
 //blocks
 @import "blocks/_preview.scss";
 @import "blocks/_header.scss";
+@import "blocks/_menu.scss";
 @import "blocks/_features.scss";
 @import "blocks/_btn.scss";
 @import "blocks/_section.scss";
@@ -29,4 +36,7 @@ $z-fixed-menu: 100;
 @import "blocks/_form.scss";
 @import "blocks/_radio.scss";
 @import "blocks/_fixed-menu.scss";
+@import "blocks/_map.scss";
+@import "blocks/_footer.scss";
+@import "blocks/_hamburger.scss";
 

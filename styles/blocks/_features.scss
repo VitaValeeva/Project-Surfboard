@@ -3,7 +3,7 @@
 }
 
 .features__item {
-  margin-right: 30px;
+  margin-right: rem(30px);
 
   &:last-child {
     margin-right: 0;
@@ -15,14 +15,14 @@
 }
 
 .feature__icon {
-  width: 40px;
-  margin-right: 11px;
+  width: rem(40px);
+  margin-right: rem(11px);
 }
 
 .feature__text {
-  font-size: 16px;
+  font-size: rem(16px);
   font-weight: 700;
-  max-width: 90px;
+  max-width: rem(90px);
 }
 
 
