@@ -1,5 +1,14 @@
 .form {
   display: flex;
+
+  @include tablets {
+    flex-direction: column;
+    padding: 0 15%;
+  }
+
+  @include phones {
+    padding: 0;
+  }
 }
 
 .form__col {
@@ -7,6 +16,10 @@
   margin-right: rem(27px);
 
   &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablets {
     margin-right: 0;
   }
 }
@@ -20,7 +33,7 @@
   }
 
   &--textarea {
-    margin-bottom: rem(19px);
+    margin-bottom: rem(19px);  
   }
 }
 
@@ -43,11 +56,19 @@
   &--textarea {
     height: rem(162px);
     resize: none;
+
+    @include tablets {
+      height: rem(82px);
+    }
   }
 
   &:focus {
     border-color: #FEDB3F;
     outline: none;
+  }
+
+  @include tablets {
+    padding: rem(9px) rem(8px);
   }
 }
 
@@ -59,6 +80,13 @@
   &--checkbox {
     margin-bottom: rem(46px);
   }
+
+  @include phones {
+    justify-content: center;
+  }
 }
 
-
+.form__btns {
+  display: flex;
+  justify-content: center;
+}

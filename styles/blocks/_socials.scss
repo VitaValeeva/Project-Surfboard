@@ -1,0 +1,18 @@
+.socials__item {
+  display: inline-block;
+  margin-right: rem(14px);
+}
+
+.socials__link {
+  display: inline-block;
+  text-decoration: none;
+  width: rem(20px);
+  height: rem(20px);
+}
+
+.socials__link--vk {
+    background: url(../../img/vk.svg);
+  }
+
+
+

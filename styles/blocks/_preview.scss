@@ -5,19 +5,15 @@
   height: 100vh;
   min-height: rem(652px);
   color: #fff;
-}
 
-.preview {
-  @include tablets {
-    background-position: right;
-  }
-}
-
-.preview {
   @include tablets {
     background-color: $blue;
-    background-size: 145%;
+    background-size: rem(1220px);
     background-position: right bottom;
+  }
+
+  @include phones {
+    background-size: rem(1300px);
   }
 }
 
@@ -59,10 +55,27 @@
   font-weight: 700;
   margin-bottom: rem(17px);
   text-transform: uppercase;
+  
+  @include tablets {
+    padding: 0 5%;
+  }
+
+  @include phones {
+    padding: 0;
+  }
 }
 
 .preview__title-desc {
   font-size: rem(21px);
   margin-bottom: 2rem;
 }
+
+.design, .materials, .delivery {
+  fill: #fff;
+  width: rem(41px);
+  height: rem(41px);
+}
+
+
+
 

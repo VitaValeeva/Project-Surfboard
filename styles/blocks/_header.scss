@@ -2,6 +2,10 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  // @include tablets {
+  //   background-color: $blue;
+  // }
 }
 
 .phone-number.header__phone-number {
@@ -10,9 +14,22 @@ header {
   }
 }
 
+.logo {
+  fill: #fff;
+  width: rem(56px);
+  height: rem(39px);
+}
+
 .logo__icon {
   width: rem(56px);
   height: rem(39px);
+}
+
+.phone {
+  fill: #fff;
+  width: rem(13px);
+  height: rem(14px);
+  margin-right: rem(6px);
 }
 
 .phone-number {
