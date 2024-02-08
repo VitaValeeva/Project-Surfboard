@@ -3,9 +3,15 @@ header {
   align-items: flex-start;
   justify-content: space-between;
 
-  // @include tablets {
-  //   background-color: $blue;
-  // }
+  @include tablets {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: rem(26px);
+    background-color: $blue;
+  }
 }
 
 .phone-number.header__phone-number {
@@ -41,6 +47,10 @@ header {
 
   &__text {
     white-space: nowrap;
+  }
+
+  @include phones {
+    justify-content: center;
   }
 }
 

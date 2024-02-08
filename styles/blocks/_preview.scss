@@ -7,14 +7,9 @@
   color: #fff;
 
   @include tablets {
-    background-color: $blue;
-    background-size: rem(1220px);
-    background-position: right bottom;
+    background-position: right -30px top 30px;   
   }
 
-  @include phones {
-    background-size: rem(1300px);
-  }
 }
 
 .preview__title-section {
@@ -47,6 +42,10 @@
   justify-content: space-between;
   height: 100%;
   padding: rem(28px) 0 rem(61px) 0;
+
+  @include tablets {
+    position: static; 
+  }
 }
 
 .preview__main-title {
@@ -57,7 +56,7 @@
   text-transform: uppercase;
   
   @include tablets {
-    padding: 0 5%;
+    padding: 0 3%;
   }
 
   @include phones {

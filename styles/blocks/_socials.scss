@@ -1,6 +1,10 @@
 .socials__item {
   display: inline-block;
   margin-right: rem(14px);
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .socials__link {
@@ -10,9 +14,11 @@
   height: rem(20px);
 }
 
-.socials__link--vk {
-    background: url(../../img/vk.svg);
-  }
+.vk, .fb, .inst, .tw {
+  width: 20px;
+  height: 20px;
+}
 
-
-
+.vk, .inst, .tw {
+  fill: #B3B3B3;
+}
