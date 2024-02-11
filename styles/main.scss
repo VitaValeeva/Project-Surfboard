@@ -4,6 +4,7 @@ $baseFontSize: 18px;
 //breakpoints
 $tablets: 768px;
 $phones: 480px;
+$phonesTwo: 320px;
 
 //colors
 $blue: #1968B1;
@@ -38,7 +39,7 @@ $z-fixed-menu: 100;
 @import "blocks/_fixed-menu.scss";
 @import "blocks/_map.scss";
 @import "blocks/_footer.scss";
-@import "blocks/_hamburger.scss";
+@import "blocks/_burger.scss";
 @import "blocks/_socials.scss";
 @import "blocks/_contacts.scss";
 

@@ -14,4 +14,8 @@
   }
 }
 
-
+@mixin phonesTwo {
+  @media screen and (max-width: $phonesTwo) {
+    @content;
+  }
+}

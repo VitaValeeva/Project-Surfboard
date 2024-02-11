@@ -38,11 +38,6 @@
               </span>
               <span class="phone-number__text">8 800 903 90 90</span>
             </a>
-            <a href="" class="hamburger">
-              <span class="hamburger__plank"></span>
-              <span class="hamburger__plank"></span>
-              <span class="hamburger__plank"></span>
-            </a>          
           </header>
           <div class="preview__title-section">
             <h1 class="preview__main-title">Профессиональные доски для <br> серфинга</h1>
@@ -283,61 +278,69 @@
       </section>
       <section class="section map-section">
         <div id="map"></div>
-      </section>
-      <footer class="footer">
-        <div class="container footer__container ">
-          <div class="contacts">
-            <adress class="contacts__adress">            
-              <div class="contacts__place">Москва, ул.Новый Арбат, д.31/12</div>
-              <a href="tel:+78009039090" class="phone-number">
-                <span class="phone-number__icon">
-                    <!-- <img src="./img/phone.svg" class="phone-number__icon-elem" alt="phone icon"> -->
-                    <svg class="phone__footer-contacts">
-                      <use xlink:href="./sprite.svg#phone"></use>
-                    </svg>
-                </span>
-                <span class="phone-number__text">8 800 903 90 90</span>
-              </a>            
-            </adress>
+        <footer class="footer">
+          <div class="container footer__container ">
+            <div class="contacts">
+              <adress class="contacts__adress">            
+                <div class="contacts__place">Москва, ул.Новый Арбат, д.31/12</div>
+                <a href="tel:+78009039090" class="phone-number">
+                  <span class="phone-number__icon">
+                      <!-- <img src="./img/phone.svg" class="phone-number__icon-elem" alt="phone icon"> -->
+                      <svg class="phone__footer-contacts">
+                        <use xlink:href="./sprite.svg#phone"></use>
+                      </svg>
+                  </span>
+                  <span class="phone-number__text">8 800 903 90 90</span>
+                </a>            
+              </adress>
+            </div>
+            <div class="socials">
+                <ul class="socials__list">
+                  <li class="socials__item">
+                    <!-- <a href="#" class="socials__link"> -->
+                      <!-- <span class="socials__link--vk"></span>  -->                                       
+                    <!-- </a> -->
+                    <a href="#" class="socials__link">
+                      <svg class="vk">
+                        <use xlink:href="./sprite.svg#vk"></use>
+                      </svg> 
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <!-- <a href="#" class="socials__link">
+                      <span class="socials__link--fb"></span>                    
+                    </a> -->
+                    <a href="#" class="socials__link">
+                      <svg class="fb">
+                        <use xlink:href="./sprite.svg#fb"></use>
+                      </svg>
+                    </a> 
+                  </li>
+                  <li class="socials__item">
+                    <!-- <a href="#" class="socials__link">
+                      <span class="socials__link--inst"></span>                    
+                    </a> -->
+                    <a href="#" class="socials__link">                
+                      <svg class="inst">
+                        <use xlink:href="./sprite.svg#inst"></use>
+                      </svg> 
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <!-- <a href="#" class="socials__link">
+                      <span class="socials__link--tw"></span>                    
+                    </a> -->
+                    <a href="#" class="socials__link"> 
+                      <svg class="tw">
+                        <use xlink:href="./sprite.svg#tw"></use>
+                      </svg>
+                    </a> 
+                  </li>
+                </ul>
+            </div>
           </div>
-          <div class="socials">
-              <ul class="socials__list">
-                <li class="socials__item">
-                  <!-- <a href="#" class="socials__link"> -->
-                    <!-- <span class="socials__link--vk"></span>  -->                                       
-                  <!-- </a> -->
-                  <svg class="vk">
-                    <use xlink:href="./sprite.svg#vk"></use>
-                  </svg> 
-                </li>
-                <li class="socials__item">
-                  <!-- <a href="#" class="socials__link">
-                    <span class="socials__link--fb"></span>                    
-                  </a> -->
-                  <svg class="fb">
-                    <use xlink:href="./sprite.svg#fb"></use>
-                  </svg> 
-                </li>
-                <li class="socials__item">
-                  <!-- <a href="#" class="socials__link">
-                    <span class="socials__link--inst"></span>                    
-                  </a> -->
-                  <svg class="inst">
-                    <use xlink:href="./sprite.svg#inst"></use>
-                  </svg> 
-                </li>
-                <li class="socials__item">
-                  <!-- <a href="#" class="socials__link">
-                    <span class="socials__link--tw"></span>                    
-                  </a> -->
-                  <svg class="tw">
-                    <use xlink:href="./sprite.svg#tw"></use>
-                  </svg> 
-                </li>
-              </ul>
-          </div>
-        </div>
-      </footer>      
+        </footer>
+      </section>            
     </div>
   </div>
   <nav class="fixed-menu">
@@ -353,5 +356,12 @@
       <li class="fixed-menu__item"> <a href="" class="fixed-menu__link"></a> </li>
     </ul>
   </nav>
+  <div class="burger" id="burger">
+    <a href="" class="burger">
+      <span class="burger__plank"></span>
+      <span class="burger__plank"></span>
+      <span class="burger__plank"></span>
+    </a>
+  </div>
 </body>
 </html>

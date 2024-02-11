@@ -1,0 +1,51 @@
+.burger {
+  position: fixed;
+  top: 20px;
+  right: 10%;
+  width: 26px;
+  height: 23px;  
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.4s;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  
+    @include tablets {
+    display: inline-flex;
+  }
+}
+
+.burger__plank {
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  transition: all 0.4s;
+}
+
+.burger__plank:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger__plank:nth-child(3) {
+  bottom: 0;
+  top: initial;
+}
+
+.burger--active .burger__plank:nth-child(1) {  
+  transform: rotate(45deg) translateX(8px) translateY(7px);
+}
+
+.burger--active .burger__plank:nth-child(2) {
+  opacity: 0;
+}
+
+.burger--active .burger__plank:nth-child(3) {
+  transform: rotate(-45deg) translateX(-8px) translateY(8px);
+  bottom: initial;
+}

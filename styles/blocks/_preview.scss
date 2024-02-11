@@ -1,5 +1,5 @@
 .preview {
-  background: url("../img/bg-preview.png") center no-repeat;
+  background: url("../img/bg-preview.png") right top no-repeat;
   background-size: cover;
   background-color: $blue;
   height: 100vh;
@@ -7,9 +7,16 @@
   color: #fff;
 
   @include tablets {
-    background-position: right -30px top 30px;   
+    background-position: right rem(-70px) top rem(30px);   
   }
 
+  @include phones {
+    background-position: right rem(-120px) top rem(30px);   
+  }
+
+  @include phonesTwo {
+    background-position: right rem(-235px) top rem(30px);   
+  }
 }
 
 .preview__title-section {
@@ -60,13 +67,22 @@
   }
 
   @include phones {
+    font-size: rem(30px);
     padding: 0;
+  }
+
+  @include phonesTwo {
+    font-size: rem(32px);
   }
 }
 
 .preview__title-desc {
   font-size: rem(21px);
   margin-bottom: 2rem;
+
+  @include phonesTwo {
+    font-size: rem(16px);
+  }
 }
 
 .design, .materials, .delivery {

@@ -4,7 +4,7 @@
   @include phones {
     display: flex;
     margin-bottom: 5%;
-    text-align: left;
+    // text-align: left;
 
     &:last-child {
       margin-bottom: 0;
@@ -42,6 +42,12 @@
   font-weight: 700;
   color: $black;
   margin-bottom: rem(16px);
+}
+
+.benefit__text {
+  @include phones {
+    text-align: left;
+  }
 }
 
 .benefit__desc {
