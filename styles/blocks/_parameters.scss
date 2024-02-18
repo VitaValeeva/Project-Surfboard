@@ -1,0 +1,41 @@
+.product__parameters {
+  width: rem(91px);
+  height: rem(91px);
+  position: relative;
+  cursor: pointer;
+  margin-bottom: rem(52px);
+  
+  &:hover {
+    .dropdown {
+      opacity: 1;
+    }
+  }
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.parameters-btn {
+  width: rem(91px);
+  height: rem(91px);
+  background-color: #3A587E;
+  padding: 0;
+  border: none;
+}
+
+.parameters__icon {
+  width: rem(38px);
+  height: rem(38px);
+  fill: #fff;
+  }
+
+.parameters__text {
+  color: #fff;
+  font-size: rem(14px);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+

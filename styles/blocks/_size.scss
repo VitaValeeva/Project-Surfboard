@@ -1,0 +1,38 @@
+.product__size {
+  margin-bottom: rem(24px);
+
+  @include tablets {
+    margin-bottom: rem(18px);
+
+    @include phones {
+      margin-bottom: rem(10px);
+    }
+  }
+}
+
+.product__size-list {
+  width: 100%;
+  display: flex;
+  gap: rem(28px);
+
+  @include tablets {
+    gap: rem(40px);
+  }
+}
+ 
+.size__item {
+  width: rem(136px);
+
+  @include tablets {
+    text-align: end;
+
+    &:last-child {
+      text-align: left;
+    }
+  }
+}
+
+.size__value {
+  font-weight: 700;
+  color: #000;
+}

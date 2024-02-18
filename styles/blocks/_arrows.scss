@@ -1,0 +1,32 @@
+.products-slider {
+  position: relative;
+
+  &__arrows {
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+    @include tablets {
+      top: 31%;
+      width: 72%;
+      margin-left: 14%;
+
+      @include phones {
+        margin-left: 12%;
+      }
+    }
+  }
+}
+
+.arrow__icon {
+  width: rem(24px);
+  height: rem(40px);
+  fill: transparent;
+ 
+  &--dir--next {
+    transform: rotate(180deg);
+  }
+}
