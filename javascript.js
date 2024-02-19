@@ -8,7 +8,8 @@ links.forEach(function(element){
   element.addEventListener('click' , toggleMenu);
 })
 
-function toggleMenu(){
+function toggleMenu(e){
+  e.preventDefault();
   burger.classList.toggle('burger--active');
   overlay.classList.toggle('overlay--active');
   body.classList.toggle('body--active-menu');
