@@ -27,8 +27,8 @@ const findBlockByAlias = (alias) => {
   });
 };
 
-$(".reviews-switcher__link").click((event) => {
-  event.preventDefault();
+$(".reviews-switcher__link").click((e) => {
+  e.preventDefault();
 
   const $this = $(e.currentTarget);
   const target = $this.attr("data-open");
@@ -38,3 +38,38 @@ $(".reviews-switcher__link").click((event) => {
   itemToShow.addClass("active").siblings().removeClass("active");
   curItem.addClass("active").siblings().removeClass("active");
 });
+
+//acco
+
+function accordionTeam () {
+  const workers = document.querySelectorAll(".team__item");
+  const teamAccord = document.querySelector(".team");
+
+  teamAccord.addEventListener("click", function (event) {
+    event.preventDefault();
+    const target = event.target;
+
+    if (target.classList.contains("team__title")) {
+      const worker = target.parentNode;
+      const content = target.nextElementSiblbng;
+      const contentHeight = content.firstElementChild.clientHeight;
+
+      for (const iterator of workers) {
+        if (iterator != worker) {
+          iterator.classList.remove("team__item-active");
+          iterator.lastElementChild.style.height = 0;
+        }
+      }
+
+      if (worker.classList.contains("team__item-active")) {
+        worker.classList.remove("team__item-active");
+        content.style.height = 0;
+      } else {
+        worker.classList.add("team__item-active");
+        content.style.height = contentHeight + "px";
+      }
+    }
+  });
+}
+
+accordionTeam();

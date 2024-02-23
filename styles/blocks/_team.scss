@@ -1,6 +1,8 @@
 .team {
   display: flex;
   justify-content: space-between;
+  // height: 100vh;
+  // width: 100vw;
 
   @include tablets {
     padding: 0 10%;
@@ -22,8 +24,84 @@
   }
 }
 
+.team__item {
+  flex: 1;
+  text-align: center;
+  max-width: rem(220px);
+  position: relative;
+
+  &-active {
+    .team__title {
+     color: #FEDB3F;
+
+      &::after {
+      transform: rotate(180deg);
+      margin-top: rem(5px);
+      }
+    } 
+  } 
+}   
+
+.team__member {
+  margin-bottom: rem(21px);
+
+  &-img {
+    height: rem(290px);
+  }
+}
+
+.team__title {
+  font-size: rem(21px);
+  font-weight: 700;
+  color: $black;
+  background: #fff;
+  border: none;
+  margin-bottom: rem(8px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+//   &::after {
+//     content: url("../../img/triangle.svg");
+//     position: absolute;
+//     margin-left: rem(5px);    
+//     margin-bottom: rem(5px);
+//   }
+// }
+
+  &:after {
+    content: "";
+    height: 0;
+    width: 0;
+    border: rem(9px) solid transparent;
+    border-top-color: #000;
+    border-bottom-width: rem(0px);
+    margin-left: rem(10px);
+  }
+}
+
 .team__content {
   overflow: hidden;
   transition: height .3s;
   height: 0;
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-text {
+    font-size: rem(18px);
+    font-weight: 300;
+    color: #666;
+  }
 }
+
+.team__occ {
+  font-size: rem(18px);
+  font-weight: 400;
+  color: $black;
+  margin-bottom: rem(4px);
+}
+

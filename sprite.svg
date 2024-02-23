@@ -257,5 +257,14 @@
 	<defs/>
 	<rect id="left" width="24.000000" height="40.000000" transform="translate(24.000000 40.000000) rotate(-179.999985)" fill="#FFFFFF" fill-opacity="0"/>
 	<path id="Vector 1" d="M19 34L6.91422 21.9142C6.13318 21.1332 6.13318 19.8668 6.91422 19.0858L19 7" stroke="#000000" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linecap="round"/>
+</symbol>
+
+<symbol id="triangle" viewBox="0 0 7.79422 6.75">
+ <desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<path id="Polygon 1" d="M3.89711 6.75L7.79422 0L0 0L3.89711 6.75Z" fill-opacity="1.000000" fill-rule="evenodd"/>
+</symbol>
 
 </svg>
