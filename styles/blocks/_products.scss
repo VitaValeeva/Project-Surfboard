@@ -2,6 +2,29 @@
   background-color: rgb(248, 250, 249);
 }
 
+.products-slider {
+  width: 100%;
+  position: relative;
+}
+
+.products-slider__wrapp {
+  overflow: hidden;
+}
+
+.products__list {
+  display: flex;
+  transition: all 1s;
+}
+
+.products__item {
+  position: relative;
+  // display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 100%;
+  transition: all 1s;
+}
+
 .product__container {
   display: flex;
 

@@ -1,0 +1,41 @@
+.modal {
+  display: none;
+  max-width: 309px;
+ 
+  &.error-modal {
+    .modal__content {
+      color: red;
+    }
+  }
+
+  &.fancybox-content {
+    padding: 0 !important;
+  }
+
+  .fancybox-button {
+    display: none;
+  }
+}
+
+.modal__container {
+  box-flex-group: #fff;
+  padding: rem(35px) rem(60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+}
+
+.modal__content {
+  font-weight: 500;
+  color: #000;
+  margin-bottom: rem(39px);
+}
+
+.input-error {
+  border-color: red
+}
+
+.form__input.input-error {
+  border-color: red;
+}
