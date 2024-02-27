@@ -1534,6 +1534,11 @@ header {
   top: 100%;
 }
 
+.team--version--mobile .team__content {
+  position: absolute;
+  top: 100%;
+}
+
 .team--version--mobile {
   display: none;
 }

@@ -44,7 +44,7 @@ $(".reviews-switcher__link").click((e) => {
 function accordionTeam () {
   const workers = document.querySelectorAll(".team__item");
   const teamAccord = document.querySelector(".team");
-
+  
   teamAccord.addEventListener("click", function (event) {
     event.preventDefault();
     const target = event.target;
@@ -76,16 +76,17 @@ accordionTeam();
 
 //products-slider
 
-let list = document.querySelector(".products__list");
-let controls = document.querySelector(".arrow");
-let currentIndex = 0;
+let list = document.querySelector(".products__list"); //нашли список с лишками
+let controls = document.querySelector(".arrow"); //нашли элемент с переключателями
+let currentIndex = 0; //индекс текущего слайда
 
 const slider = (event) => {
-  event.preventDefault();
-  let target = event.target;
+  event.preventDefault(); //скинули стандартное поведение                        
+  let target = event.target; // то на что клацнули
 
-  if (target.classList.contains("arrow__link")) {
-    let targetValue = target.dataset.vector;
+  if (target.closest(".arrow__link")) { //если сам элемент с классом .arrow__link или ближайший родитель с таким классом
+    
+    let targetValue = target.dataset.vector; //то смотрим значение data-vector
 
     if (targetValue === "next") {
       if (currentIndex < list.children.length - 1) {
@@ -108,6 +109,7 @@ function doTransition(index) {
 }
 
 controls.addEventListener("click", slider);
+
 
 //modal
 
@@ -152,14 +154,17 @@ $(".form").submit ((e) => {
         to: to.val(),
       },
 
-      // error: (data) => {}
+      success: data => {
+        console.log(data);
+      }
+
     });
 
     request.done((data) => {
       content.text(data.message);          
     });
 
-    request.fail((data) => {
+    request.fail(() => {
       const message = data.responseJSON.message;
       content.text(message);
       modal.addClass("error-modal");
@@ -171,6 +176,8 @@ $(".form").submit ((e) => {
         type: "inline",
       });
     })
+
+       
   }  
 });
 
