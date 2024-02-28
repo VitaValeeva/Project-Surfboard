@@ -19,7 +19,7 @@ function toggleMenu(e){
 
 burger.addEventListener('click', toggleMenu);
 
-//switcher
+//switcher reviews-section
 
 const findBlockByAlias = (alias) => {
   return $(".reviews__item").filter((ndx, item) => {
@@ -39,7 +39,8 @@ $(".reviews-switcher__link").click((e) => {
   curItem.addClass("active").siblings().removeClass("active");
 });
 
-//acco
+
+//acco team-section
 
 function accordionTeam () {
   const workers = document.querySelectorAll(".team__item");
@@ -74,19 +75,21 @@ function accordionTeam () {
 
 accordionTeam();
 
-//products-slider
 
-let list = document.querySelector(".products__list"); //нашли список с лишками
-let controls = document.querySelector(".arrow"); //нашли элемент с переключателями
-let currentIndex = 0; //индекс текущего слайда
+// slider products-section
+
+(function () {
+
+let list = document.querySelector(".products__list");
+let controls = document.querySelector(".arrow");
+let currentIndex = 0;
 
 const slider = (event) => {
-  event.preventDefault(); //скинули стандартное поведение                        
-  let target = event.target; // то на что клацнули
+  event.preventDefault();
+  let target = event.target;
 
-  if (target.closest(".arrow__link")) { //если сам элемент с классом .arrow__link или ближайший родитель с таким классом
-    
-    let targetValue = target.dataset.vector; //то смотрим значение data-vector
+  if (target.closest(".arrow__link")) {
+    let targetValue = target.dataset.vector;
 
     if (targetValue === "next") {
       if (currentIndex < list.children.length - 1) {
@@ -109,9 +112,13 @@ function doTransition(index) {
 }
 
 controls.addEventListener("click", slider);
+   
+})();
 
 
-//modal
+
+
+//modal order-section
 
 const validateFields = (form, fieldsArray) => {
 
