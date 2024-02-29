@@ -1535,7 +1535,6 @@ header {
 }
 
 .team--version--mobile .team__content {
-  position: absolute;
   top: 100%;
 }
 

@@ -42,19 +42,57 @@ $(".reviews-switcher__link").click((e) => {
 
 //acco team-section
 
-function accordionTeam () {
-  const workers = document.querySelectorAll(".team__item");
-  const teamAccord = document.querySelector(".team");
+// function accordionTeam () {
+//   const workers = document.querySelectorAll(".team__item");
+//   const teamAccord = document.querySelector(".team");
   
-  teamAccord.addEventListener("click", function (event) {
+//   teamAccord.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     const target = event.target;
+
+//     if (target.classList.contains("team__title")) {
+//       const worker = target.parentNode;
+//       const content = target.nextElementSibling;
+//       const contentHeight = content.firstElementChild.clientHeight;
+
+//       for (const iterator of workers) {
+//         if (iterator !== worker) {
+//           iterator.classList.remove("team__item-active");
+//           iterator.lastElementChild.style.height = 0;
+//         }
+//       }
+
+//       if (worker.classList.contains("team__item-active")) {
+//         worker.classList.remove("team__item-active");
+//         content.style.height = 0;
+//       } else {
+//         worker.classList.add("team__item-active");
+//         content.style.height = contentHeight + "px";
+//       }
+//     }
+//   });
+// }
+
+// accordionTeam();
+
+
+//acco team-section v2
+
+function accordionTeam () {
+  const workers = document.querySelectorAll(".team__item");    //не надо???
+  const teamAccord = document.querySelector(".team__block");
+
+  teamAccord.addEventListener("click", (event) => {
     event.preventDefault();
-    const target = event.target;
 
-    if (target.classList.contains("team__title")) {
-      const worker = target.parentNode;
-      const content = target.nextElementSibling;
+    if (event.target.classList.contains("team__title")) {
+      let list = event.target.parentNode.parentNode;
+      let items = list.children;    //workers
+
+      let worker = event.target.parentNode;   //li
+      const content = event.target.nextElementSibling;
       const contentHeight = content.firstElementChild.clientHeight;
-
+      
       for (const iterator of workers) {
         if (iterator !== worker) {
           iterator.classList.remove("team__item-active");
@@ -81,41 +119,37 @@ accordionTeam();
 (function () {
 
 let list = document.querySelector(".products__list");
-let controls = document.querySelector(".arrow");
+let controls = document.querySelectorAll(".arrow .arrow__link");
 let currentIndex = 0;
 
-const slider = (event) => {
+controls.forEach(function (elem) {
+  elem.addEventListener("click", slider);
+});
+
+function slider (event) {
   event.preventDefault();
-  let target = event.target;
 
-  if (target.closest(".arrow__link")) {
-    let targetValue = target.dataset.vector;
+  let targetValue = event.currentTarget.dataset.vector;
 
-    if (targetValue === "next") {
-      if (currentIndex < list.children.length - 1) {
-        currentIndex += 1;
-        doTransition(currentIndex);
-      } else return;
-    }
-
-    if (targetValue === "prev") {
-      if (currentIndex > 0) {
-        currentIndex -= 1;
-        doTransition(currentIndex);
-      } else return;
-    }
+  if (targetValue === "next") {
+    if (currentIndex < list.children.length - 1) {
+      currentIndex += 1;
+      doTransition(currentIndex);
+    } else return;
   }
-};
+
+  if (targetValue === "prev") {
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      doTransition(currentIndex);
+    } else return;
+  }
+}
 
 function doTransition(index) {
   list.style.transform = `translateX(-${index * 100}%)`;
 }
-
-controls.addEventListener("click", slider);
-   
 })();
-
-
 
 
 //modal order-section
@@ -172,7 +206,7 @@ $(".form").submit ((e) => {
     });
 
     request.fail(() => {
-      const message = data.responseJSON.message;
+      const message = "Ошибка сервера";
       content.text(message);
       modal.addClass("error-modal");
     });
