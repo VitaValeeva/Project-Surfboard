@@ -1,0 +1,125 @@
+.products-menu-section {
+    background: url(../../img/Slider-bg.jpg) center center / cover no-repeat;
+    position: relative;
+    color: #fff;
+    // height: 100vh;
+    
+    @include tablets {
+        overflow: hidden;
+    }
+}
+
+.products-menu-section__title {
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    top: rem(110px);
+    left: rem(84px);
+
+    @include tablets {
+       left: rem(60px);
+    }
+
+    @include phones {
+       left: rem(10px);
+    }
+}
+
+.products-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+
+
+.products-menu__item {
+    display: flex;
+}
+
+.products-menu__title {
+    position: relative;
+    width: rem(102px);   
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+}
+
+.title-one {
+    background: url(../../img/slide-one.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;   
+}
+
+.title-two {
+    background: url(../../img/slide-two.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+.title-three {
+    background: url(../../img/slide-three.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;  
+}
+
+.products-menu__text {
+    position: absolute;
+    transform: rotate(-90deg);
+    font-size: rem(48px);
+    font-weight: 700;
+    bottom: rem(105px);
+    right: rem(-60px);
+
+    &.text-two {
+        right: rem(-68px);
+        bottom: rem(113px);
+    }
+
+    &.text-three {
+        right: rem(-50px);
+        bottom: rem(92px);
+    }
+}
+
+.products-menu__content { 
+    width: 0;
+    position: relative;
+    overflow: hidden;
+    transition: width .7s;  
+    background: #333537;
+    opacity: .8;
+}
+
+.products-menu__container {
+    padding: 40px 73px 45px 26px;
+}
+
+.products-menu__close {
+    position: absolute;
+    top: rem(20px);
+    right: rem(25px);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.close-icon {
+    width: rem(20px);
+    height: rem(20px);
+    display: block;
+    fill: #fff;
+    transition: .3s;
+}
+
+.products-menu__content-text {
+    font-size: rem(16px);
+    font-weight: 400;
+}

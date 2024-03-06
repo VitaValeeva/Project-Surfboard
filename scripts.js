@@ -19,6 +19,7 @@ function toggleMenu(e){
 
 burger.addEventListener('click', toggleMenu);
 
+
 //switcher reviews-section
 
 const findBlockByAlias = (alias) => {
@@ -41,42 +42,6 @@ $(".reviews-switcher__link").click((e) => {
 
 
 //acco team-section
-
-// function accordionTeam () {
-//   const workers = document.querySelectorAll(".team__item");
-//   const teamAccord = document.querySelector(".team");
-  
-//   teamAccord.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     const target = event.target;
-
-//     if (target.classList.contains("team__title")) {
-//       const worker = target.parentNode;
-//       const content = target.nextElementSibling;
-//       const contentHeight = content.firstElementChild.clientHeight;
-
-//       for (const iterator of workers) {
-//         if (iterator !== worker) {
-//           iterator.classList.remove("team__item-active");
-//           iterator.lastElementChild.style.height = 0;
-//         }
-//       }
-
-//       if (worker.classList.contains("team__item-active")) {
-//         worker.classList.remove("team__item-active");
-//         content.style.height = 0;
-//       } else {
-//         worker.classList.add("team__item-active");
-//         content.style.height = contentHeight + "px";
-//       }
-//     }
-//   });
-// }
-
-// accordionTeam();
-
-
-//acco team-section v2
 
 function accordionTeam () {
   const workers = document.querySelectorAll(".team__item");    //не надо???
@@ -227,3 +192,218 @@ $(".app-submit-btn").click((e) => {
 
   $.fancybox.close();
 });
+
+
+// acco products-menu-section
+
+const mesureWidth = item => {
+  let reqItemWidth = 0;
+
+  const screenWidth = $(window).width();
+  const container = item.closest(".products-menu");
+  const titlesBlocks = container.find(".products-menu__title");
+  const titlesWidth = titlesBlocks.width() * titlesBlocks.length;
+
+  const textContainer = item.find(".products-menu__container");
+  const paddingLeft = parseInt(textContainer.css("padding-left"));
+  const paddingRight = parseInt(textContainer.css("padding-right"));
+
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobile) {
+    reqItemWidth = screenWidth - titlesWidth;
+  } else {
+    reqItemWidth = 524;
+  }  
+
+  return {
+    container: reqItemWidth,
+    textContainer: reqItemWidth - paddingRight - paddingLeft
+  }
+};
+
+const closeEveryItemInContainer = (container) => {
+  const items = container.find(".products-menu__item");
+  const content = container.find(".products-menu__content");
+
+  items.removeClass("active");
+  content.width(0);
+};
+
+const openItem = item => {
+  const hiddenContent = item.find(".products-menu__content");
+  const reqWidth = mesureWidth(item);
+  const textBlock = item.find(".products-menu__container");
+
+  item.addClass("active");
+  hiddenContent.width(reqWidth.container);
+  textBlock.width(reqWidth.textContainer);
+};
+
+$(".products-menu__title").on("click", e => {
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const item = $this.closest(".products-menu__item");
+  const itemOpened = item.hasClass("active");
+  const container = $this.closest(".products-menu");
+
+  if (itemOpened) {
+    closeEveryItemInContainer(container);
+  } else {
+    closeEveryItemInContainer(container);
+    openItem(item);
+  } 
+});
+
+$(".products-menu__close").on("click", e => {
+  e.preventDefault();
+
+  closeEveryItemInContainer($('.products-menu'));
+});
+
+
+//ops
+
+const sections = $("section");
+const display = $(".maincontent");
+const sideMenu = $(".fixed-menu");
+const menuItems = sideMenu.find(".fixed-menu__item");
+
+// const mobileDetect = new MobileDetect(window.navigator.userAgent);
+// const isMobile = mobileDetect.mobile();
+
+let inScroll = false;
+
+sections.first().addClass("active");
+
+const countSectionPosition = (sectionEq) => {
+  const position = sectionEq * -100;
+
+  if (isNaN(position)) {
+    console.error("передано неверное значение в countSectionPosition");
+    return 0;
+  }
+
+  return position;
+};
+
+const changeMenuThemeForSection = (sectionEq) => {
+  const currentSection = sections.eq(sectionEq);
+  const menuTheme = currentSection.attr("data-sidemenu-theme");
+  const activeClass = "fixed-menu--shadowed";
+
+  if (menuTheme === "black") {
+    sideMenu.addClass(activeClass);
+  } else {
+    sideMenu.removeClass(activeClass);
+  }
+};
+
+const resetActiveClassForItem = (items, itemEq, activeClass) => {
+  items.eq(itemEq).addClass(activeClass).siblings().removeClass(activeClass);
+}
+
+const PerformTransition = (sectionEq) => {
+  if (inScroll) return;
+
+  const transitionOver = 1000;
+  const mouseInertiaOver = 300;
+  
+  inScroll = true;   
+        
+  const position = countSectionPosition(sectionEq);
+
+  changeMenuThemeForSection(sectionEq);
+
+  display.css({
+    transform: `translateY(${position}%)`
+  });
+
+  resetActiveClassForItem(sections, sectionEq, "active");
+
+  setTimeout(() => {
+    inScroll = false;
+    resetActiveClassForItem(menuItems, sectionEq, "fixed-menu__item--active");
+      
+  }, transitionOver + mouseInertiaOver);
+};
+
+const viewportScroller = () => {
+  const activeSection = sections.filter(".active");
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  return {
+    next() {
+      if (nextSection.length) {
+        PerformTransition(nextSection.index());
+      }
+    },
+    prev() {
+      if (prevSection.length) {
+        PerformTransition(prevSection.index());
+      }
+    },
+  } ;
+};
+
+$(window).on("wheel", e => {
+  const deltaY = e.originalEvent.deltaY;
+  const scroller = viewportScroller();
+
+  if (deltaY > 0) {
+    scroller.next();
+  }
+
+  if (deltaY < 0) {
+    scroller.prev();
+  }
+});
+
+$(window).on("keydown", e => {   //управление с клавиатуры
+  const tagName = e.target.tagName.toLowerCase();
+  const userTypingInInputs = tagName === "input" || tagName === "textarea";
+  const scroller = viewportScroller();
+
+  if (userTypingInInputs) return;
+
+    switch (e.keyCode) {
+      case 38: //prev
+        scroller.prev();
+        break;
+  
+      case 40: //next
+        scroller.next();
+        break;  
+    }   
+});
+
+$(".wrapper").on("touchmove", e => e.preventDefault());
+
+$("[data-scroll-to]").click((e) => {   //навигация по ссылкам
+  e.preventDefault();
+
+  const $this = $(e.currentTarget);
+  const target = $this.attr("data-scroll-to");
+  const reqSection = $(`[data-section-id=${target}]`);
+
+  PerformTransition(reqSection.index());
+});
+
+// if (isMobile) {
+  //https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+  $("body").swipe({    //свайп моб.версия        
+    swipe: function(event, direction) {
+      const scroller = viewportScroller();
+      let scrollDirection = "";
+
+      if (direction === "up") scrollDirection = "next";
+      if (direction === "down") scrollDirection = "prev";
+
+      scroller[scrollDirection]();
+    },
+  });
+// }
+
+

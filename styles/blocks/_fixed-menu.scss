@@ -2,13 +2,29 @@
   position: fixed;
   top: 33%;
   right: 3%;
+  color: #fff;
   z-index: $z-fixed-menu;
+  // z-index: 100;
 
   @include tablets {
     display: none;
   }
-}
 
+  &--shadowed {
+    .fixed-menu__link:before {
+      background: #000;
+    }
+
+    .fixed-menu__item {
+      &--active {
+        .fixed-menu__link {
+          border-color: #000;
+        }
+      }
+    }
+  }
+}
+  
 .fixed-menu__item {
   margin-bottom: rem(5px);
 
