@@ -10,6 +10,19 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
   />
 
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=2e097a8a-ecd1-4aa6-9135-cff24101f8fa&lang=ru_RU">
+  </script> -->
+   <!-- <script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+          center: [55.755864, 37.617698],
+          zoom: 14,
+          controls: []
+        });
+    }    
+</script> -->
+
   <link rel="stylesheet" href="./styles/main.css" />
   </head>
 
@@ -41,7 +54,7 @@
                   <a href="#" data-scroll-to="reviews" class="menu__link">Отзывы</a>
                 </li>
                 <li class="menu__item"> 
-                  <a href="#" class="menu__link">Как мы работаем</a>
+                  <a href="#" data-scroll-to="player" class="menu__link">Как мы работаем</a>
                 </li>
                 <li class="menu__item"> 
                   <a href="#" data-scroll-to="contacts" class="menu__link">Контакты</a>
@@ -675,7 +688,7 @@
         </div>        
       </section>
 
-      <section data-sidemenu-theme="black" data-section-id="player" class="section player-section">
+      <!-- <section data-sidemenu-theme="black" data-section-id="player" class="section player-section">
         <div class="container">
           <h2 class="section__title">Как мы работаем</h2>
           <div class="player-section__container">
@@ -696,6 +709,32 @@
               </div>
             </div>
           </div>
+        </div>
+      </section> -->
+
+      <section data-sidemenu-theme="black" data-section-id="player" class="section player__section">
+        <div class="container">
+          <h2 class="section__title">Как мы работаем</h2>
+          <div class="video__container">
+            <div class="video__player">
+              <video id="video" poster="./img/player-bg.jpeg">
+                <source src="./serfing-video.mp4" type="video/mp4">
+              </video>
+              <img src="./img/play-white.png" alt="Icon" class="play video__play">
+            </div>
+            <div class="video__toolbar">
+              <div class="duration">
+                <img src="./img/play.png" alt="Icon" class="duration__icon play">
+                <input type="range" class="duration__length" id="durationLevel" min="0">
+              </div>
+              <div class="sound">
+                <img src="./img/sound-icon.png" alt="Icon" class="sound__img" id="micLevel">
+                <div class="sound__volume">
+                  <input type="range" class="duration__length duration__length--other" id="volumeLevel" min="0" max="10">
+                </div>
+              </div>
+            </div>
+        </div>
         </div>
       </section>
 
@@ -776,7 +815,7 @@
       </section>
 
       <section data-sidemenu-theme="black" data-section-id="contacts" class="section map-section">
-        <div id="map"></div>
+        <div id="map" class="map"></div>
         <footer class="footer">
           <div class="container footer__container ">
             <div class="contacts">
@@ -915,6 +954,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=2e097a8a-ecd1-4aa6-9135-cff24101f8fa&lang=ru_RU">
+  </script>
   <script src="./scripts.js"></script>
 </body>
 </html>

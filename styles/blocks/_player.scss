@@ -1,71 +1,92 @@
-.player-section__container {
-    height: rem(392px);
-    width: rem(662px);
-    margin: auto;
-}
-
-.player {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-
-//   &.active    {      ????????????
-
-
-//   }
-
-  &.active .player__splash {
-    display: none;
-  }
-
-  &.paused {
-    .player__start {
-      width: 14px;
-      height: 22px;
-      border: none;
-
-      &:after,
-      &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 5px;
-        top: 0;
-        bottom: 0;
-        background: #626262;
-      }
-
-      &:after {
-        right: 0;
-      }
-
-      &:before {
-        left: 0;
-      }
-    }
-  }
-}
-
-.player__splash {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url(../../img/player.jpeg) center center/cover no-repeat;
-  cursor: pointer;
-}
-
-.player__controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: rem(35px);
-  background: #404040;
+.video__container {
+  height: rem(359px);
+  width: rem(662px);
+  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 rem(25px);
+  justify-content: center;
+  flex-direction: column;
+}
+
+.video__player{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#video{
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.video__play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  visibility: visible;
+}
+
+.video__play.video__play--active{
+  visibility: hidden;
+}
+
+.video__toolbar{
+  height: 35px;
+  width: 100%;
+  display: flex;
+  background: #3e3e3e;
+}
+
+.duration{
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.duration__length{
+  width: 100%;
+  height: 4px;
+  border-radius: 1px;
+  background: #626262;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.duration__length::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  background: #626262;
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.duration__length--other{
+  width: 58px;
+  height: 4px;
+  margin-bottom: 12px;
+}
+
+.sound{
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.duration__icon {
+  margin-left: 7px;
+}
+
+.duration__icon, .sound__img{
+  cursor: pointer;
+  color: #626262;
+  width: 20px;
+  height: 20px;
 }
