@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
+  @include tabletsTwo {
+    width: 90%;
+    margin: auto;
+  }
 }
 
 .video__player{

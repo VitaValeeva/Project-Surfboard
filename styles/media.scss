@@ -8,6 +8,12 @@
   }
 }
 
+@mixin tabletsTwo {
+  @media screen and (max-width: $tabletsTwo) {
+    @content;
+  }
+}
+
 @mixin phones {
   @media screen and (max-width: $phones) {
     @content;

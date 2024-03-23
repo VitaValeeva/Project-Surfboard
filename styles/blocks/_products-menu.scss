@@ -1,5 +1,5 @@
 .products-menu-section {
-    background: url(../../img/Slider-bg.jpg) center center / cover no-repeat;
+    background: url(../img/Slider-bg.jpg) center center / cover no-repeat;
     position: relative;
     color: #fff;
     // height: 100vh;
@@ -47,7 +47,7 @@
 }
 
 .title-one {
-    background: url(../../img/slide-one.jpg);
+    background: url(../img/slide-one.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -55,7 +55,7 @@
 }
 
 .title-two {
-    background: url(../../img/slide-two.jpg);
+    background: url(../img/slide-two.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -63,7 +63,7 @@
 }
 
 .title-three {
-    background: url(../../img/slide-three.jpg);
+    background: url(../img/slide-three.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -99,7 +99,7 @@
 }
 
 .products-menu__container {
-    padding: 40px 73px 45px 26px;
+    padding: rem(40px) rem(73px) rem(45px) rem(26px);
 }
 
 .products-menu__close {
